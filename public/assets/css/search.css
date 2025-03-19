@@ -1,0 +1,136 @@
+/* Estilos para resultados de búsqueda */
+.search-results {
+    position: absolute;
+    top: 45px; /* Posicionado debajo de la barra de búsqueda */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado horizontal */
+    width: 350px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1005; /* Mayor que la barra de búsqueda */
+    margin-top: 5px;
+    border: 1px solid #eaeaea;
+}
+
+.search-product-item {
+    display: flex;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-items: center;
+}
+
+.search-product-item:hover {
+    background-color: #f9f9f9;
+}
+
+.search-product-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 12px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.search-product-info {
+    flex: 1;
+}
+
+.search-product-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.search-product-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    font-weight: bold;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Ajustes para el contenedor de búsqueda */
+.search-wrapper {
+    position: relative;
+}
+
+.search-wrapper .search.active {
+    z-index: 1003;
+}
+
+/* Estilos para scrollbar personalizado */
+.search-results::-webkit-scrollbar {
+    width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Ajustes responsive mejorados */
+@media (max-width: 1024px) {
+    .search-results {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-results {
+        width: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .search-results {
+        width: 90%;
+        max-width: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 320px) {
+    .search-results {
+        width: 95%;
+        max-width: 250px;
+    }
+    
+    .search-product-item img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .search-product-info h4 {
+        font-size: 12px;
+    }
+    
+    .search-product-info p {
+        font-size: 11px;
+    }
+}

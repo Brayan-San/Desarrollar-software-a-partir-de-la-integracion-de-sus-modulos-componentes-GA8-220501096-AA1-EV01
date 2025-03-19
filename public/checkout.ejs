@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ZABAL</title>
+    <link rel="stylesheet" href="/assets/css/checkout.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <%- include('../app/views/templates/navbar') %>
+
+    <div class="checkout-container">
+        <!-- Steps navigation -->
+        <div class="checkout-steps">
+            <div class="step active" data-step="1">
+                <span class="step-number">1</span>
+                <span class="step-text">Envío</span>
+            </div>
+            <div class="step" data-step="2">
+                <span class="step-number">2</span>
+                <span class="step-text">Pago</span>
+            </div>
+            <div class="step" data-step="3">
+                <span class="step-number">3</span>
+                <span class="step-text">Confirmación</span>
+            </div>
+        </div>
+
+        <!-- Shipping Section -->
+        <div class="checkout-section shipping-form active">
+            <h2 class="section-title">Información de Envío</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="fullName">Nombre Completo</label>
+                    <input type="text" id="fullName" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" placeholder="+57" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="document">Cédula</label>
+                        <input type="text" id="document" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Ciudad</label>
+                        <select id="city" required>
+                            <option value="">Selecciona una ciudad</option>
+                            <option value="bogota">Bogotá D.C.</option>
+                            <option value="medellin">Medellín</option>
+                            <option value="cali">Cali</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="locality">Localidad</label>
+                        <select id="locality" required disabled>
+                            <option value="">Selecciona una localidad</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Dirección Detallada</label>
+                    <textarea id="address" placeholder="Dirección, barrio y detalles adicionales para la entrega" required></textarea>
+                </div>
+
+                <div class="shipping-option">
+                    <input type="checkbox" id="shipping-option" onchange="updateTotalDisplay()">
+                    <label for="shipping-option">Envío por paquetería ($10,000)</label>
+                </div>
+            </form>
+            <div class="navigation-buttons">
+                <button type="button" class="submit-btn next-step">Continuar al Pago</button>
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="checkout-section payment-methods">
+            <!-- <h2 class="section-title">Método de Pago</h2> -->
+            <div id="payment-methods-container">
+                <!-- Payment methods will be generated here -->
+            </div>
+            <div class="navigation-buttons">
+                <button type="button" class="submit-btn prev-step">Volver</button>
+                <button type="button" class="submit-btn next-step">Continuar a Resumen</button>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="checkout-section cart-summary">
+            <h2 class="section-title">Resumen del Pedido</h2>
+            <div class="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="order-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal-amount">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío</span>
+                    <span class="shipping-amount">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="total-amount">$0.00</span>
+                </div>
+            </div>
+            <div class="navigation-buttons">
+                <button type="button" class="submit-btn prev-step">Volver</button>
+                <button class="submit-btn confirm-order">Confirmar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <%- include('templates/footer') %>
+
+    <script src="/assets/js/cartService.js"></script>
+    <script src="/assets/js/cart.js"></script>
+    <script src="https://checkout.epayco.co/checkout.js"></script>
+    <script type="module" src="/assets/js/ePayco.js"></script>
+    <script type="module" src="/assets/js/checkout.js"></script>
+</body>
+</html>

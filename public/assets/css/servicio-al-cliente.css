@@ -1,0 +1,465 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color:  #2D3748;
+    background-color: #F7FAFC;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background-color: white;
+    color: #007BFF;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Services Section */
+.services-section {
+    background-color: white;
+    padding: 100px 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color:#2D3748
+}
+
+.section-header p {
+    color: #718096;
+    font-size: 1.1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+    border: 1px solid #E2E8F0;
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon svg {
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: #007BFF;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    color: #718096;
+    margin-bottom: 20px;
+}
+
+.service-link {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.service-link:hover {
+    color: #007BFF;
+}
+
+/* Contact Section Modifications */
+.contact-section {
+    background-color: #F7FAFC;
+    padding: 100px 20px;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-form {
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E2E8F0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2D3748;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    background-color: #F7FAFC;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Service Card Icon Adjustments */
+.service-card .service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    object-fit: contain;
+}
+
+/* WhatsApp Bubble */
+.whatsapp-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 0;
+}
+
+.whatsapp-bubble:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+
+.whatsapp-bubble svg {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+/* Contact Section Redesign */
+.contact-section {
+    background-color: #ffffff;
+    padding: 100px 20px;
+    padding-bottom: 50px; /* Añade espacio dentro de la sección */
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-wrapper {
+    display: flex;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.contact-info {
+    flex: 0 0 40%;
+    background: linear-gradient(to right, #0056b3, #007BFF);
+    color: white;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-header {
+    margin-bottom: 40px;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-icon {
+    background-color: rgba(255,255,255,0.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon svg {
+    stroke: white;
+    width: 30px;
+    height: 30px;
+}
+
+.contact-text h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.contact-text p {
+    opacity: 0.7;
+}
+
+.contact-form-section {
+    flex: 0 0 60%;
+    padding: 50px 40px;
+    background: linear-gradient(to left, #0056b3, #007BFF);
+    color: white;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modern-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.modern-contact-form label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.modern-contact-form input,
+.modern-contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #3167ad;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modern-contact-form input:focus,
+.modern-contact-form textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+}
+
+.modern-contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #459fff, #00c69f);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    align-self: flex-start;
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(76, 0, 255, 0.3);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    transform: translateX(100%);
+    animation: slideIn 0.5s forwards;
+    z-index: 1000;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #00b09b, #96c93d);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form-section {
+        flex: 0 0 100%;
+        padding: 40px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}

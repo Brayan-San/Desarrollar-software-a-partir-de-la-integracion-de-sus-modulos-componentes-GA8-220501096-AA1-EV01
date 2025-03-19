@@ -1,0 +1,983 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Jost", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+:root{
+    --color : #ffffff;
+    --text-color: #eeeeee;
+    --main-color: #f0f0f0;
+    --other-color: #ffc633;
+    --second-color: #616060;
+
+    --hl-font: 5.5rem;
+    --h2-font: 3.5rem;
+    --p-font: 1rem;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+}
+
+.logo img{
+    max-width: 120px;
+    height: auto;
+}
+
+.navmenu{
+    display: flex;
+}
+
+.navmenu a{
+    color: black;
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    font-weight: 400;
+    transition: all .42s ease;
+}
+
+.navmenu a:hover{
+    color: rgb(189, 189, 189);
+}
+
+.nav-icon{
+    position: relative;
+    z-index: 1002; /* Mayor que el menú para estar siempre visible */
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon i{
+    margin-right: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 400;
+    transition: all .42 ease;
+}
+
+.nav-icon i:hover{
+    transform: scale(1.1);
+    color: rgb(189, 189, 189);
+}
+
+#menu-icon{
+    font-size: 35px;
+    color: #000000;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+section{
+    padding: 5% 10%;
+}
+
+.main-home {
+    width: 100%;
+    height: 100vh;
+    position: relative; /* Añadido */
+    overflow: hidden;  /* Añadido */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+}
+
+.main-text h5{
+    color: rgb(255, 255, 255);
+font-size: 16px;
+text-transform: capitalize;
+font-weight: 500;
+}
+
+.main-text h1{
+    color: #ffffff;
+    font-size: 65px;
+    text-transform: capitalize;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 6px 0 10px;
+}
+
+.main-text p{
+    color: #ffffff;
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.main-btn{
+    display: inline-block;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 12px 25px;
+    padding: all .42s ease;
+}
+.main-btn:hover{
+    background-color: #565656;
+    color: azure;
+}
+
+.main-btn i{
+    vertical-align: middle;
+}
+
+.down-arrow{
+    position: absolute;
+    top: 85%;
+    right: 11%;
+}
+
+.down i{
+    font-size: 30px;
+    color: #ffffff;
+    border: 2px solid #838383;
+    border-radius: 50px;
+    padding: 12px 12px;
+}
+
+.down i:hover{
+    background-color: #9e9e9e;
+    color: azure;
+    transition: all .42s ease;
+}
+
+header.sticky{
+    background: #fff;
+    padding: 20px 10%;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%); 
+    z-index: 100;  /* Mismo que el header normal */ 
+}
+
+
+/* ____________________________________________________________________________ */
+
+footer {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    width: 100%;
+    position: relative; /* Asegura que esté sobre otros elementos */
+    z-index: 1000; /* Alto z-index para estar por encima de otros elementos */
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, auto));
+    gap: 2rem;
+    padding: 2rem 10%; /* Añade padding para mejor espaciado */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h3 {
+    margin-bottom: 1rem;
+    color: var(--second-color);
+}
+
+.footer-box a {
+    color: var(--second-color);
+    margin-bottom: 0.8rem;
+    transition: all .50s ease;
+}
+
+.footer-box a:hover {
+    transform: translateX(-5px);
+    color: var(--text-color);
+}
+
+.social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    font-size: 17px;
+    border-radius: 10px;
+    margin-right: 14px;
+    transition: 0.6s;
+}
+
+.social a:hover {
+    transform: rotate3d(0, 0, 1, 360deg) scale(1.06);
+    color: var(--bg-color);
+}
+
+.copyright {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 10%;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+}
+
+.end-text p {
+    font-size: 15px;
+    color: var(--second-color);
+}
+
+.end-img img {
+    width: 100%;
+    max-width: 150px; /* Limita el ancho de la imagen */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Para páginas con fondo de imagen */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-wrapper {
+    flex: 1 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+
+/* Overlay del carrito */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Usamos vw en lugar de % */
+    height: 100vh; /* Usamos vh en lugar de % */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Carrito */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -150%; /* Aumentamos el valor negativo para asegurar que esté completamente fuera */
+    width: 400px;
+    height: 100vh;
+    background: white;
+    z-index: 999;
+    padding: 20px;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    transform: translateX(10px); /* Añadimos un pequeño desplazamiento */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart.active {
+    right: 0;
+    visibility: visible;
+    transform: translateX(0); /* Removemos el desplazamiento cuando está activo */
+}
+
+/* Header del carrito */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-close {
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+}
+
+.cart-close:hover {
+    color: #000;
+}
+
+/* Contenido del carrito */
+.cart-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 40px 0;
+    color: #666;
+}
+
+.empty-cart i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+/* Footer del carrito */
+.cart-footer {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background: #68b450;
+}
+
+/* Estilos para los items del carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.price {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    border: 1px solid #ddd;
+    background: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+/* CSS */
+.search-container {
+position: relative;
+display: flex;
+align-items: center;
+}
+
+.search-box {
+position: absolute;
+right: 100%;
+top: 50%;
+transform: translateY(-50%);
+width: 0;
+overflow: hidden;
+transition: width 0.3s ease-in-out;
+}
+
+.search-box.active {
+width: 3000px;
+}
+
+.search-icon i {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    margin-right: 20px;
+    transition: all .42s ease;
+}
+
+.search-icon i:hover {
+    transform: scale(1.1);
+    color: rgb(189, 189, 189);
+}
+
+.search-input {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    align-items: center;
+    background: white;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-icon.active .search-input {
+    display: flex;
+}
+
+.search-input input {
+    width: 0;
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-icon.active .search-input input {
+    width: 300px;
+}
+
+.search-input .bx-x {
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.search-icon .bx-search {
+display: block;
+}
+
+.search-icon .bx-x {
+display: none;
+}
+
+.search-icon.active .bx-search {
+display: none;
+}
+
+.search-icon.active .bx-x {
+display: block;
+}
+
+.navmenu.search-active {
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+
+/* Fondo blanco específico para la página de login */
+.navbar-login {
+    background-color: white !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.stock-indicator {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.out-of-stock {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.low-stock {
+    color: #ffc107;
+    font-weight: bold;
+}
+/*----------------------------------- Icono Search ---------------------------------------------*/
+.search-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 35px;
+    z-index: 1003;
+}
+
+.search-wrapper .search {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    transform: translateY(-4px); /* Mueve el círculo 2px hacia arriba */
+    /* O alternativamente */
+    /* margin-top: -2px; */
+}
+
+.search-wrapper .search:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 2px;
+    height: 12px;
+    background-color: #000;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease;
+}
+
+/* Aumentar ancho del search activo */
+.search-wrapper .search.active {
+    width: 650px; /* Ancho base aumentado */
+    height: 40px;
+    border-radius: 0;
+    position: absolute;
+    right: -10px;
+    background: white;
+}
+
+/* Agregar estilos para la x de cierre */
+.search-wrapper .search.active::before {
+    content: "×";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1004;
+}
+
+/* Ajustar el menú cuando el search está activo */
+.navmenu {
+    transition: transform 0.3s ease;
+}
+
+.navmenu.search-active {
+    transform: translateX(-300px);
+}
+
+.search-wrapper .search.active:after {
+    display: none;
+}
+
+.search-wrapper .search input {
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 0 20px;
+    border: none;
+    outline: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.search-wrapper .search.active input {
+    opacity: 1;
+}
+
+.close-icon {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Cambiado a la derecha */
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.search-wrapper .search.active .close-icon {
+    display: block;
+}
+
+/* Estilo del ícono cuando el usuario está logueado */
+.bx-user.logged-in {
+    color: green;
+    cursor: pointer;
+}
+
+/*----------------------------------- RESPONSIVE-NAVABR---------------------------------------------*/
+@media (max-width:890px){ 
+    header{
+        padding: 20px 3%;
+        transition: .4s;
+    }
+}
+
+@media (max-width:630px) {
+    .main-text h1{
+        font-size: 50px;
+        transition: .4s;
+    }
+    .main-text p{
+        font-size: 10px;
+        transition: .4s;
+    }
+    .main.btn{
+        padding: 10px 20px;
+        transition: .4s;
+    }
+}
+
+@media (max-width: 890px){ 
+    header{
+        padding: 20px 3%;
+        transition: .4s;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Mantener los estilos originales del header y navbar */
+    .navmenu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 30px;
+        transition: all 0.42s;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-icon i {
+        margin-right: 20px;
+        color: rgb(0, 0, 0);
+        font-size: 25px;
+        font-weight: 400;
+        transition: all .42s ease;
+    }
+
+    .nav-icon i:hover {
+        transform: scale(1.1);
+        color: rgb(189, 189, 189);
+    }
+
+    .logo img {
+        max-width: 120px;
+        height: auto;
+    }
+
+    .navmenu a {
+        display: block;
+        color: #000;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 15px 0;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navmenu a:hover {
+        color: rgb(189, 189, 189);
+    }
+
+    /* Estilo para el ícono del menú */
+    #menu-icon {
+        position: relative;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    /* Línea superior */
+    #menu-icon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transition: all 0.3s ease;
+    }
+
+    /* Línea central */
+    #menu-icon span {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transition: all 0.3s ease;
+        display: block;
+    }
+
+    /* Línea inferior */
+    #menu-icon::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transition: all 0.3s ease;
+    }
+
+    /* Animación al abrir el menú */
+    #menu-icon.bx-x::before {
+        transform: rotate(45deg);
+        top: 11px;
+    }
+
+    #menu-icon.bx-x span {
+        opacity: 0;
+    }
+
+    #menu-icon.bx-x::after {
+        transform: rotate(-45deg);
+        bottom: 11px;
+    }
+
+    .navmenu.open {
+        right: 0;
+    }
+}
+
+/* Mantener los media queries originales para pantallas más pequeñas */
+@media (max-width: 630px) {
+    .main-text h1 {
+        font-size: 50px;
+        transition: .4s;
+    }
+    .main-text p {
+        font-size: 10px;
+        transition: .4s;
+    }
+    .main-btn {
+        padding: 10px 20px;
+        transition: .4s;
+    }
+}
+
+/* Resto de tus media queries para la responsividad del search icon */
+@media (max-width: 890px) {
+    .search-wrapper {
+        right: 0px;
+    }
+    
+    .search-wrapper .search.active {
+        width: 250px;
+    }
+}
+
+@media (max-width: 750px) {
+    .search-wrapper {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-right: 15px;
+    }
+    
+    .search-wrapper .search.active {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-wrapper .search.active {
+        width: 150px;
+    }
+}
+
+/*----------------------------------- RESPONSIVE-ICONO SEARCHS ---------------------------------------------*/
+/* Media queries actualizados */
+@media (max-width: 890px) {
+    .search-wrapper .search.active {
+        width: 250px;
+    }
+}
+
+@media (max-width: 750px) {
+    .search-wrapper {
+        position: relative;
+        margin-right: 15px;
+    }
+
+    .search-wrapper .search.active {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-wrapper .search.active {
+        width: 150px;
+    }
+}
+
+/* Agregar media queries para ajustar el margen en responsive */
+@media (max-width: 890px) {
+    .search-wrapper {
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 750px) {
+    .search-wrapper {
+        margin-right: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-wrapper {
+        margin-right: 20px;
+    }
+}
+/*----------------------------------- RESPONSIVE-VIDEO-INICIO---------------------------------------------*/
+
+/* Para pantallas medianas y pequeñas */
+@media (max-width: 768px) {
+    .video-background {
+        object-position: left center; /* Muestra el lateral izquierdo */
+        /* O si prefieres el lateral derecho: 
+        /* object-position: right center; */
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .video-background {
+        object-position: left center; /* Mantiene el lateral izquierdo */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-text h1 {
+        font-size: 32px; /* Aún más pequeño para móviles muy pequeños */
+    }
+}
+
+/*---------------------------------cart-resposividad-----------------------------------------------*/
+@media (max-width: 480px) {
+    .cart {
+        width: 100%;
+        right: -150vw; /* Usamos vw y aumentamos el valor para asegurar que esté fuera */
+        transform: translateX(20px); /* Aumentamos el desplazamiento en móviles */
+    }
+    
+    .cart.active {
+        right: 0;
+        transform: translateX(0);
+    }
+}
+
+.cart-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 4px;
+    color: white;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards, fadeOut 0.5s 3.5s forwards;
+}
+
+.notification.success {
+    background: #28a745;
+}
+
+.notification.error {
+    background: #dc3545;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}

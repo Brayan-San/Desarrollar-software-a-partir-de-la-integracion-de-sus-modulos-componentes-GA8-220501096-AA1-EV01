@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Pagina Producto</title>
+		<link rel="stylesheet" href="/assets/css/info-producto.css" />
+		<link rel="stylesheet" href="/assets/css/cart.css">
+		<!-- Boxicons CSS -->
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	</head>
+	<body>
+		<%- include('../app/views/templates/navbar') %>
+		<div class="container-title"></div>
+		<main>
+			<div class="container-img">
+				<div class="image-carousel">
+					<div class="carousel-container">
+						<img 
+							src="" 
+							alt="imagen-producto-1" 
+							class="carousel-image active"
+						/>
+						<img 
+							src=""
+							alt="imagen-producto-2"
+							class="carousel-image"
+						/>
+						<img 
+							src="" 
+							alt="imagen-producto-3" 
+							class="carousel-image"
+						/>
+						<img 
+							src="" 
+							alt="imagen-producto-4" 
+							class="carousel-image"
+						/>
+						<img 
+							src="" 
+							alt="imagen-producto-5" 
+							class="carousel-image"
+						/>
+					</div>
+					<div class="carousel-thumbnails">
+						<div class="thumbnail active" data-index="0"></div>
+						<div class="thumbnail" data-index="1"></div>
+						<div class="thumbnail" data-index="2"></div>
+						<div class="thumbnail" data-index="3"></div>
+						<div class="thumbnail" data-index="4"></div>
+					</div>
+					<button class="carousel-prev"></button>
+					<button class="carousel-next"></button>
+				</div>
+			</div>
+			<div class="container-info-product">
+				<div class="container-price">
+					<span>$95.00</span>
+					<i class="fa-solid fa-angle-right"></i>
+				</div>
+
+				<div class="container-details-product">
+					<div class="form-group">
+						<label for="colour">Color</label>
+						<select name="colour" id="colour">
+							<option disabled selected value="">
+								Escoge una opción
+							</option>
+							<option value="rojo">Rojo</option>
+							<option value="blanco">Blanco</option>
+							<option value="beige">Beige</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="size">Talla</label>
+						<select name="size" id="size">
+							<option disabled selected value="">
+								Escoge una opción
+							</option>
+							<option value="40">40</option>
+							<option value="42">42</option>
+							<option value="43">43</option>
+							<option value="44">44</option>
+						</select>
+					</div>
+					<button class="btn-clean">Limpiar</button>
+				</div>
+
+				<div class="container-add-cart">
+					<div class="container-quantity">
+						<button class="quantity-btn decrease">-</button>
+						<input
+							type="number"
+							placeholder="1"
+							value="1"
+							min="1"
+							class="input-quantity"
+						/>
+						<button class="quantity-btn increase">+</button>
+					</div>
+					<button class="btn-add-to-cart modern-button">
+						<span class="btn-text">Añadir al carrito</span>
+						<span class="btn-icon">🛒</span>
+					</button>
+				</div>
+
+				<div class="container-description">
+					<div class="title-description">
+						<h4>Descripción</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-description">
+						<p>
+						</p>
+					</div>
+				</div>
+
+				<div class="container-additional-information">
+					<div class="title-additional-information">
+						<h4>Información adicional</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-additional-information hidden">
+						<p></p>
+					</div>
+				</div>
+
+				<div class="container-reviews">
+					<div class="title-reviews">
+						<h4>Reseñas</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-reviews hidden">
+						<p></p>
+					</div>
+				</div>
+
+				<div class="container-social">
+					<span>Compartir</span>
+					<div class="container-buttons-social">
+						<a href="#"><i class="fa-brands fa-facebook"></i></a>
+						<a href="#"><i class="fa-brands fa-twitter"></i></a>
+						<a href="#"><i class="fa-brands fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<section class="container-related-products">
+			<h2>Productos Relacionados</h2>
+			<div class="card-list-products">
+				<div class="card">
+					<div class="card-img">
+						<img
+							src="/assets/images/FANGZ-02.jpg"
+							alt="producto-1"
+						/>
+					</div>
+					<div class="info-card">
+						<div class="text-product">
+							<h3>Tshirt Black Oversize</h3>
+							<p class="category">FANGZ.</p>
+						</div>
+						<div class="price">$120.000</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<img
+							src="assets/images/SNAKEZ-02.jpg"
+							alt="producto-2"
+						/>
+					</div>
+					<div class="info-card">
+						<div class="text-product">
+							<h3>Tshirt White Oversize</h3>
+							<p class="category"> SNAKEZ.</p>
+						</div>
+						<div class="price">$120.000</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<img
+							src="assets/images/DOGZ-03.jpg"
+							alt="producto-3"
+						/>
+					</div>
+					<div class="info-card">
+						<div class="text-product">
+							<h3>Tshirt Black Oversize</h3>
+							<p class="category">DOGZ</p>
+						</div>
+						<div class="price">$120.000</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-img">
+						<img
+							src="assets/images/DOGZ-01.jpg"
+							alt="producto-4"
+						/>
+					</div>
+					<div class="info-card">
+						<div class="text-product">
+							<h3>Tshirt Black Oversize</h3>
+							<p class="category">DOGZ.</p>
+						</div>
+						<div class="price">$120.000</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+		<%- include('templates/footer') %>
+
+    	<%- include('templates/cart') %>
+		</footer>
+
+		<script src="https://kit.fontawesome.com/74bc1e5ed6.js" crossorigin="anonymous"></script>
+		<script src="/assets/js/search.js"></script>
+
+		<!-- En info-producto.ejs, catalogo.ejs y donde uses los scripts -->
+		<script type="module" src="/assets/js/cart.js"></script>
+		<script type="module" src="/assets/js/catalogo.js"></script>
+		<script type="module" src="/assets/js/cartService.js"></script>
+    	<script type="module" src="/assets/js/info-producto.js"></script>
+		<script type="module" src="/assets/js/productStock.js"></script>
+	</body>
+</html>

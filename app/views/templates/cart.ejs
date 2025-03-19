@@ -1,0 +1,44 @@
+<!-- Overlay para el fondo borroso -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- Carrito -->
+<div class="cart" id="cart">
+    <div class="cart-header">
+        <h2>Tu Carrito</h2>
+        <button class="cart-close" id="cartClose">×</button>
+    </div>
+
+    <div class="cart-content">
+        <!-- Aquí irán los productos -->
+        <div class="empty-cart">
+            <i class='bx bx-cart'></i>
+            <p>Tu carrito está vacío</p>
+        </div>
+        
+        <!-- Ejemplo de un item en el carrito -->
+        <!-- <div class="cart-item">
+            <img src="product-image.jpg" alt="Producto">
+            <div class="item-details">
+                <h3>Nombre del Producto</h3>
+                <p class="price">$99.99</p>
+                <div class="quantity">
+                    <button class="qty-btn">-</button>
+                    <span>1</span>
+                    <button class="qty-btn">+</button>
+                </div>
+            </div>
+            <button class="remove-item">×</button>
+        </div> -->
+    </div>
+
+    <div class="cart-footer">
+        <div class="total">
+            <span>Total:</span>
+            <span>$0.00</span>
+        </div>
+        <button onclick="window.location.href='/payment-flow'" class="checkout-btn">
+            Proceder al Pago
+        </button>
+    </div>
+</div>
+

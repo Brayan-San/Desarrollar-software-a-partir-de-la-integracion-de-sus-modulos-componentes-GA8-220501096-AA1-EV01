@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Cliente - ZABAL</title>
+    <link rel="stylesheet" href="/assets/css/customer-panel.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Navbar (Se incluirá desde template) -->
+    <%- include('templates/navbar') %>
+
+    <div class="customer-panel-container">
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar-container">
+                    <svg class="default-avatar" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="5" r="3" fill="#a9a9a9"/>
+                        <path d="M2 13.5C2 10.8 4.5 9 8 9C11.5 9 14 10.8 14 13.5V16H2V13.5Z" fill="#a9a9a9"/>
+                    </svg>
+                    <img src="" alt="Avatar" class="user-avatar" id="preview-avatar">
+                    <label class="avatar-upload" for="avatar-input">
+                        <i class='bx bx-camera'></i>
+                        <input type="file" id="avatar-input" accept="image/*" style="display: none;">
+                    </label>
+                </div>
+                <h2 id="user-name">Nombre del Usuario</h2>
+                <p id="user-email">usuario@ejemplo.com</p>
+            </div>
+            <nav class="panel-navigation">
+                <ul>
+                    <li class="active" data-section="dashboard">
+                        <i class='bx bx-grid-alt'></i> Panel Principal
+                    </li>
+                    <li data-section="personal-info">
+                        <i class='bx bx-user'></i> Información Personal
+                    </li>
+                    <li data-section="orders">
+                        <i class='bx bx-shopping-bag'></i> Mis Pedidos
+                    </li>
+                    <li data-section="addresses">
+                        <i class='bx bx-map'></i> Direcciones
+                    </li>
+                    <li data-section="security">
+                        <i class='bx bx-lock'></i> Seguridad
+                    </li>
+                    <li id="logout-btn">
+                        <i class='bx bx-log-out'></i> Cerrar Sesión
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <main class="panel-content">
+            <!-- Sección Dashboard -->
+            <section id="dashboard" class="active-section">
+                <h1>Bienvenido, <span id="welcome-name">Usuario</span></h1>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <i class='bx bx-shopping-bag'></i>
+                        <h3>Pedidos Totales</h3>
+                        <p id="total-orders">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class='bx bx-cart'></i>
+                        <h3>Último Pedido</h3>
+                        <p id="last-order">Sin pedidos</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Información Personal -->
+            <section id="personal-info">
+                <h2>Información Personal</h2>
+                <form id="personal-info-form">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" name="email" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" name="phone">
+                    </div>
+                    <button type="submit" class="btn-save">Guardar Cambios</button>
+                </form>
+            </section>
+
+            <!-- Sección Pedidos -->
+            <section id="orders">
+                <h2>Mis Pedidos</h2>
+                <div id="orders-list" class="orders-container">
+                    <!-- Los pedidos se cargarán dinámicamente -->
+                    <p>No hay pedidos realizados aún.</p>
+                </div>
+            </section>
+
+            <!-- Sección Direcciones -->
+            <section id="addresses">
+                <h2>Mis Direcciones</h2>
+                <div id="addresses-list">
+                    <div class="address-card">
+                        <h3>Dirección Principal</h3>
+                        <p id="main-address">Sin dirección registrada</p>
+                        <button class="btn-edit">Editar</button>
+                    </div>
+                </div>
+                <button id="add-address-btn" class="btn-add">
+                    <i class='bx bx-plus'></i> Agregar Dirección
+                </button>
+            </section>
+
+            <!-- Sección Seguridad -->
+            <section id="security">
+                <h2>Seguridad de la Cuenta</h2>
+                <form id="change-password-form">
+                    <div class="form-group">
+                        <label>Contraseña Actual</label>
+                        <input type="password" name="currentPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nueva Contraseña</label>
+                        <input type="password" name="newPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirmar Nueva Contraseña</label>
+                        <input type="password" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn-save">Cambiar Contraseña</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            fetch('/api/auth/logout', { method: 'POST' })
+                .then(() => window.location.href = '/');
+        });
+    </script>
+
+    <!-- Footer (Se incluirá desde template) -->
+    <%- include('templates/footer') %>
+    <%- include('templates/cart') %>
+
+    <script src="/assets/js/customer-panel.js"></script>
+    <script type="module" src="/assets/js/cartService.js"></script>
+    <script type="module" src="/assets/js/cart.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

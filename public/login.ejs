@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+
+    <!-- CSS de la página de login -->
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <%- include('../app/views/templates/navbar') %>
+
+    <!-- Contenedor principal que centra el login -->
+    <div class="page-wrapper">
+        <div class="container right-panel-active">
+            <!-- Formulario de Registro -->
+            <div class="container__form container--signup">
+                <form action="/api/auth/register" class="form" id="form1">
+                    <h2 class="form__title">Registrarse</h2>
+                    <input type="text" name="name" placeholder="Usuario" class="input" />
+                    <input type="email" name="email" placeholder="Correo Electrónico" class="input" />
+                    <input type="password" name="password" placeholder="Contraseña" class="input" />
+                    <button type="submit" class="btn">Registrarse</button>
+                </form>
+            </div>
+
+            <!-- Formulario de Inicio de Sesión -->
+            <div class="container__form container--signin">
+                <form action="/api/auth/login" class="form" id="form2">
+                    <h2 class="form__title">Iniciar Sesión</h2>
+                    <input type="email" name="email" placeholder="Correo Electrónico" class="input" />
+                    <input type="password" name="password" placeholder="Contraseña" class="input" />
+                    <a href="/forgot-password" class="link">¿Olvidaste tu contraseña?</a>
+                    <button type="submit" class="btn">Iniciar Sesión</button>
+                </form>
+            </div>
+
+            <!-- Overlay de Transición -->
+            <div class="container__overlay">
+                <div class="overlay">
+                    <div class="overlay__panel overlay--left">
+                        <button class="btn" id="signIn">Iniciar Sesión</button>
+                    </div>
+                    <div class="overlay__panel overlay--right">
+                        <button class="btn" id="signUp">Registrarse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('templates/footer') %>
+    <%- include('templates/cart') %>
+    
+    <!-- JavaScript -->
+    <script src="/assets/js/login.js"></script>
+    <script src="/assets/js/search.js"></script>
+    <script type="module" src="/assets/js/cart.js"></script>
+    <script type="module" src="/assets/js/catalogo.js"></script>
+    <script type="module" src="/assets/js/cartService.js"></script>
+    <script type="module" src="/assets/js/info-producto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/assets/js/notifications.js"></script>
+</body>
+</html>

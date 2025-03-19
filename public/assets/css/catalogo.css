@@ -1,0 +1,398 @@
+
+/* Ajuste para asegurar que el contenido esté debajo del navbar */
+body {
+    padding-top: 80px; /* Ajusta este valor según la altura de tu navbar */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.contenido-principal {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.camisas-grid {
+    max-width: 1400px;
+    margin: 120px auto 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* Unificar tamaños de items */
+.camisa-item {
+    background-color: white;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto; /* Cambiado para mejor consistencia */
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.camisa-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.carrusel-contenedor {
+    position: relative;
+    width: 100%;
+    padding-top: 140%; /* Cambiado de 100% a 75% para hacer más rectangular */
+    overflow: hidden;
+}
+
+.carrusel-imagenes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrusel-imagen {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    background-color: #f0f0f0;
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background: linear-gradient(to side, rgba(0,0,0,0.1), transparent);
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel-contenedor:hover .carrusel-btn {
+    opacity: 1;
+}
+
+.carrusel-btn-izq {
+    left: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
+}
+
+.carrusel-btn-der {
+    right: 0;
+    background: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
+}
+
+.carrusel-btn::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.carrusel-btn-izq::before {
+    transform: rotate(-135deg);
+    margin-left: 10px;
+}
+
+.carrusel-btn-der::before {
+    transform: rotate(45deg);
+    margin-right: 10px;
+}
+
+.camisa-info {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.camisa-titulo {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.camisa-precio {
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.camisa-descripcion {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.tallas-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.talla-btn {
+    background-color: #1c2833;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.talla-btn:hover {
+    background-color: #253443;
+    transform: scale(1.1);
+}
+
+.talla-btn.selected {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.talla-btn.agotado {
+    background-color: #dc3545;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Contenedor de botones actualizado */
+.botones-container {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+/* Estilos modernos para los botones */
+.agregar-carrito, .ver-mas {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.agregar-carrito {
+    background: linear-gradient(135deg, #4CAF50, #459c48); /* Verde sugerido */
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+
+
+.ver-mas {
+    background: linear-gradient(135deg, #3496ff, #0056b3); /* Azul sugerido */
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+/* Efectos hover para los botones */
+.agregar-carrito:hover, .ver-mas:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.agregar-carrito:active, .ver-mas:active {
+    transform: translateY(1px);
+}
+
+/* Efecto de ripple para los botones */
+.agregar-carrito::after, .ver-mas::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.207);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+.agregar-carrito:hover::after, .ver-mas:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+@media (max-width: 1200px) {
+    .camisas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .camisas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .camisa-item {
+        max-width: 320px; /* Ajusta el ancho máximo en tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .camisas-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .camisa-item {
+        max-width: 300px; /* Ajusta el ancho máximo en móviles */
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .camisas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        padding: 0 1.25rem;
+        margin-top: 100px; /* Más espacio en tablets */
+    }
+
+    .camisa-item {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .carrusel-contenedor {
+        padding-top: 130%;
+    }
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .camisas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .camisa-item {
+        width: 100%;
+        max-width: none; /* Eliminar max-width en móvil */
+    }
+}
+
+@media (max-width: 576px) {
+    .camisas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .camisa-item {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .carrusel-contenedor {
+        padding-top: 130%; /* Volver a cuadrado en móvil */
+    }
+}
+
+/* Resto de los estilos del carrusel */
+.carrusel-imagenes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrusel-imagen {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    background-color: #f0f0f0;
+}
+
+/* Mejoras de rendimiento */
+.camisa-item {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.notificacion.success {
+    background: #28a745;
+}
+
+.notificacion.error {
+    background: #dc3545;
+}
+
+.notificacion {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 4px;
+    color: white;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards, fadeOut 0.5s 3.5s forwards;
+}
+
+.talla-btn.agotado {
+    background-color: #dc3545;
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.agregar-carrito:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}

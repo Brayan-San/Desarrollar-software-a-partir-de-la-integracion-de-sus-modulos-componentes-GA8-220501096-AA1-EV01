@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Storage and uploads
+storage/
+uploads/
+videos/
+images/
+
+# Test files
+tests/
+
+# Logs
+logs/
+
+# Application directories
+checkout/
+products/
+cart/
+auth/
+paymentMethods/
+models/
+
+README.md
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp

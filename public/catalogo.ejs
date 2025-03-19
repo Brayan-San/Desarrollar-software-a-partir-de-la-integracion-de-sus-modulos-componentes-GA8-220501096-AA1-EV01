@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Camisas</title>
+    <link rel="stylesheet" href="/assets/css/catalogo.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <%- include('../app/views/templates/navbar') %>
+
+    <div id="camisasGrid" class="camisas-grid"></div>
+    
+    <!-- Footer -->
+    <%- include('templates/footer') %>
+    <%- include('templates/cart') %>
+
+    <script src="/assets/js/search.js"></script>
+
+    <!-- En info-producto.ejs, catalogo.ejs y donde uses los scripts -->
+    <script type="module" src="/assets/js/cartService.js"></script>
+    <script type="module" src="/assets/js/cart.js"></script>
+    <script type="module" src="/assets/js/catalogo.js"></script>
+</body>
+</html>
